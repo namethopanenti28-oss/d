@@ -14,7 +14,43 @@
       text-align: center;
     }
 
-    /* 🔴 RED HEADER */
+    /* ===== HAMBURGER MENU ===== */
+    .menu-icon {
+      position: fixed;
+      top: 15px;
+      left: 15px;
+      font-size: 28px;
+      color: #fff;
+      cursor: pointer;
+      z-index: 1001;
+    }
+
+    .menu-box {
+      position: fixed;
+      top: 60px;
+      left: 15px;
+      width: 180px;
+      background: linear-gradient(135deg, #ff2f92 0%, #ff8c1a 100%);
+      border-radius: 8px;
+      display: none;
+      flex-direction: column;
+      z-index: 1000;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    }
+
+    .menu-box a {
+      color: #fff;
+      text-decoration: none;
+      padding: 12px 15px;
+      text-align: left;
+      font-size: 15px;
+    }
+
+    .menu-box a:hover {
+      background: rgba(255,255,255,0.15);
+    }
+
+    /* 🔴 HEADER (UNCHANGED) */
     header {
       background: linear-gradient(135deg, #ff2f92 0%, #ff8c1a 100%);
       color: #fff;
@@ -64,7 +100,7 @@
       margin-bottom: 15px;
     }
 
-    /* 🔴 RED BUTTONS */
+    /* 🔴 BUTTONS (UNCHANGED) */
     .brand-btn {
       width: 100%;
       padding: 10px;
@@ -85,6 +121,17 @@
 </head>
 <body>
 
+  <!-- MENU ICON -->
+  <div class="menu-icon" onclick="toggleMenu()">☰</div>
+
+  <!-- MENU WITH YOUR LINKS -->
+  <div class="menu-box" id="menuBox">
+    <a href="https://www.arsnrenterprises.online/home">Home</a>
+    <a href="https://www.arsnrenterprises.online/about-us">About Us</a>
+    <a href="https://www.arsnrenterprises.online/products">Products</a>
+    <a href="https://www.arsnrenterprises.online/contact-us">Contact Us</a>
+  </div>
+
   <!-- 🔴 HEADER -->
   <header>Industrial Electrical Drives Brands</header>
 
@@ -98,9 +145,10 @@
       <img src="abb.jpg" alt="ABB Logo">
       <a href="https://namethopanenti28-oss.github.io/abbd/" class="brand-btn">ABB Drives</a>
     </div>
+
     <div class="brand-card">
       <img src="danfoss.png" alt="Danfoss Drives Logo">
-      <a href=" https://namethopanenti28-oss.github.io/danfoss/" class="brand-btn">Danfoss Drives</a>
+      <a href="https://namethopanenti28-oss.github.io/danfoss/" class="brand-btn">Danfoss Drives</a>
     </div>
 
     <div class="brand-card">
@@ -112,8 +160,14 @@
       <img src="delta.png" alt="Delta Drives Logo">
       <a href="https://namethopanenti28-oss.github.io/delta/" class="brand-btn">Delta Drives</a>
     </div>
-
   </div>
+
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById("menuBox");
+      menu.style.display = menu.style.display === "flex" ? "none" : "flex";
+    }
+  </script>
 
 </body>
 </html>
